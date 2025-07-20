@@ -7,7 +7,10 @@ app = FastAPI(title="Gundam TCG API", version="1.0.0")
 # CORS configuration (allow frontend to call API)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace "*" with frontend URL in production
+    allow_origins=[
+        "https://gundamapp-frontend.vercel.app",  # Production frontend
+        "http://localhost:3000",                 # Local dev
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
