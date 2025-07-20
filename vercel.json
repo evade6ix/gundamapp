@@ -2,12 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/next.config.ts",
+      "src": "frontend/package.json",
       "use": "@vercel/next"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/frontend/$1" }
-  ],
-  "ignoreCommand": "echo backend ignored"
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ]
 }
